@@ -1,11 +1,11 @@
 [tool.poetry]
-name = "quantready-base"
-version = "0.2.2"
-description = "Publish public or private python libraries - using the modern python stack"
+name = "quantready"
+version = "0.1.0"
+description = "A CLI to quickly launch data-driven and API-first businesses - using the modern python stack"
 authors = ["Sean Kruzel <sean@closedloop.tech>"]
 license = "MIT"
 readme = "README.md"
-packages = [{ include = "quantready_base" }]
+packages = [{ include = "quantready" }]
 classifiers = [
     "Topic :: Software Development :: Libraries :: Python Modules",
     "Programming Language :: Python :: 3.10",
@@ -13,8 +13,8 @@ classifiers = [
 ]
 
 [tool.poetry.urls]
-"Repository" = "https://github.com/closedloop-technologies/quantready-base"
-"Bug Tracker" = "https://github.com/closedloop-technologies/quantready-base/issues"
+"Repository" = "https://github.com/closedloop-technologies/quantready"
+"Bug Tracker" = "https://github.com/closedloop-technologies/quantready/issues"
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -46,7 +46,7 @@ pip-upgrader = "^1.4.15"
 pyupgrade = "^3.4.0"
 
 [tool.poetry.scripts]
-quantready-base = "quantready_base.cli:app"
+quantready = "quantready.cli:app"
 
 [build-system]
 requires = ["poetry-core"]

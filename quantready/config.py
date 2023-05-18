@@ -5,9 +5,9 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
-from quantready_base import __description__ as description
-from quantready_base import __name__ as name
-from quantready_base import __version__ as version
+from quantready import __description__ as description
+from quantready import __name__ as name
+from quantready import __version__ as version
 
 
 @dataclass

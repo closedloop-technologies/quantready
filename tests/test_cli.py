@@ -3,7 +3,7 @@ import unittest
 
 from typer.testing import CliRunner
 
-from quantready_base import cli
+from quantready import cli
 
 
 class TestCLI(unittest.TestCase):

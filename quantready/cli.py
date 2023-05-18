@@ -2,10 +2,10 @@ import pyfiglet
 from rich import print
 from typer import Typer
 
-from quantready_base import __description__ as DESCRIPTION
-from quantready_base import __name__ as NAME
-from quantready_base import __version__ as VERSION
-from quantready_base.config import load_config
+from quantready import __description__ as DESCRIPTION
+from quantready import __name__ as NAME
+from quantready import __version__ as VERSION
+from quantready.config import load_config
 
 
 def banner():

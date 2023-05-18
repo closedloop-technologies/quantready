@@ -1,7 +1,7 @@
 import unittest
 
-from quantready_base import __name__ as name
-from quantready_base.config import Config
+from quantready import __name__ as name
+from quantready.config import Config
 
 
 class TestConfig(unittest.TestCase):
