@@ -11,8 +11,8 @@ jobs:
   test:
     runs-on: ubuntu-latest
     env:
-      GH_TOKEN: ${{ github.token }}
-      GITHUB_TOKEN: ${{ github.token }}
+      GH_TOKEN: ${{ secrets.QR_TOKEN_CLASSIC }}
+      GITHUB_TOKEN: ${{ secrets.QR_TOKEN_CLASSIC }}
     steps:
       #----------------------------------------------
       #       check-out repo and set-up python
