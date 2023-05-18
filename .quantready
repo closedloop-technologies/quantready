@@ -1,0 +1,7 @@
+{
+    "name": "example-package",
+    "template": "https://github.com/closedloop-technologies/quantready-base",
+    "description": "Example package description",
+    "repo": "https://github.com/closedloop-technologies/quantready",
+    "version": "0.9.9"
+}

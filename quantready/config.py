@@ -20,6 +20,8 @@ class Config:
     name: str = name
     description: str = description
     version: str = version
+    template: str = ""
+    repo: str = ""
 
 
 def load_config() -> Config:

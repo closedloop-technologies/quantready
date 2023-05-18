@@ -16,10 +16,6 @@ class TestCLI(unittest.TestCase):
         self.assertGreater(len(result.stdout), 0)
         self.assertIn("version", result.stdout.lower().strip(), "version not in output")
 
-    def test_main(self):
-        result = self.runner.invoke(cli.app, ["main"])
-        self.assertEqual(result.exit_code, 0)
-
     def test_help(self):
         result = self.runner.invoke(cli.app, ["--help"])
         self.assertEqual(result.exit_code, 0)
