@@ -7,11 +7,12 @@ on: ["push", "pull_request"]
 
 permissions:
   contents: read
-
 jobs:
   test:
     runs-on: ubuntu-latest
-
+    env:
+      GH_TOKEN: ${{ secrets.QR_TOKEN_CLASSIC }}
+      GITHUB_TOKEN: ${{ secrets.QR_TOKEN_CLASSIC }}
     steps:
       #----------------------------------------------
       #       check-out repo and set-up python
@@ -59,4 +60,4 @@ jobs:
       - name: Run tests
         run: |
           source .venv/bin/activate
-          pytest tests/ --cov=quantready_base
+          pytest tests/ --cov=quantready

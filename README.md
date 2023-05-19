@@ -1,22 +1,50 @@
-# quantready-base
+# quantready
 
-Publish public or private python libraries - using the modern python stack
+A CLI to quickly launch data-driven and API-first businesses - using the modern python stack
 
-## ✨ Features
+## ✅✅✅ QuantReady Stack - Templates ✨
 
-Clean Code:
+### [quantready](https://github.com/closedloop-technologies/quantready)
+
+CLI for creating and configuring projects and using the quantready-* templates
+
+### [quantready-base](https://github.com/closedloop-technologies/quantready)
+
+build and publish python libraries and docker images
 
 * ✔️ [poetry](https://python-poetry.org/) for dependency management
 * ✔️ [pre-commit](https://pre-commit.com/) hooks for code formatting, linting, and testing
 * ✔️ [unittest](https://docs.python.org/3/library/unittest.html) for testing
 * ✔️ [gitleaks](https://gitleaks.io/) for secrets scanning
-
-Deployment:
-
 * ✔️ [github actions](https://github.com/actions) for CI/CD
 * ✔️ [docker](https://docker.com) for building containers
 * ✔️ [twine](https://twine.readthedocs.io/en/latest/) for publishing to pypi or private repositories
 * 🔲 [gcloud](https://cloud.google.com/sdk/gcloud) for publishing to private repositories
+
+### [quantready-api](https://github.com/closedloop-technologies/quantready-api) - A template to build and deploy fastapi applications
+
+* authentication - api key or oauth
+* authorization - RBAC via OSO
+* rate limiting - via redis
+* job-queues to support long-running tasks
+* workers
+* caching
+* github actions to deploy to gcloud
+* all other features of quantready
+
+### [quantready-vendor](https://github.com/closedloop-technologies/quantready-vendor) - A template to sell and meter access to your APIs. Supports time-based and usage-based pricing
+
+* supports free and paid endpoints
+* billing per API call or per time-period
+* stripe-cli integration for managing products and billing
+* pricing-tables, account management and checkout
+* usage tracking api
+* all other features of quantready-api
+* [quantready-chat]
+  * A template to build and deploy chatbots
+  * Supports Websockets
+  * Slack Integration
+  * all other features of quantready-vendor
 
 ## 📦 Installation
 
@@ -39,7 +67,7 @@ quantready create <your-repo> --template quantready/quantready-base
 To install and configure yourself using [gh](https://cli.github.com/)
 
 ```bash
-gh template copy quantready/quantready-base <your-repo>
+gh template copy quantready/quantready <your-repo>
 
 pip install typer
 python configure.py
@@ -48,6 +76,14 @@ python configure.py
 ## 💻 Development
 
 ### Install dependencies
+
+Requires poetry and python3.10 or higher
+
+Install Poetry from <https://github.com/python-poetry/install.python-poetry.org#python-poetry-installer>
+
+```bash
+  curl -sSL https://install.python-poetry.org | python3 -
+```
 
 ```bash
 # Create a virtual environment
@@ -58,7 +94,7 @@ source venv/bin/activate
 poetry install
 
 # Install pre-commit hooks
-pre-commit install --install-hooks
+poetry run pre-commit install --install-hooks
 
 # Create a .env file and modify it's contents
 cp .env.example .env
@@ -86,16 +122,16 @@ publish the library to pypi or private repository as well as build the docker im
 
 ```bash
 # Build the image
-docker build -t quantready/quantready-base .
+docker build -t quantready/quantready .
 
 # Run the image
-docker run -it --rm quantready/quantready-base
+docker run -it --rm quantready/quantready
 
 # Push the image to docker hub
-docker push quantready/quantready-base
+docker push quantready/quantready
 
 # Push the image to gcr
-docker tag quantready/quantready-base gcr.io/<your-project>/quantready-base
+docker tag quantready/quantready gcr.io/<your-project>/quantready
 ```
 
 ### Publish to pypi
@@ -133,31 +169,3 @@ https://docs.github.com/en/actions)
 * [Twine](https://twine.readthedocs.io/en/latest/)
 * [Gcloud](https://cloud.google.com/sdk/gcloud)
 * [GitHub CLI](https://cli.github.com/)
-
-## ✅✅✅ QuantReady Stack - Templates
-
-* [quantready](https://github.com/closedloop-technologies/quantready)
-  * CLI for creating and configuring projects and using the quantready-* templates
-* [quantready-base](https://github.com/closedloop-technologies/quantready)
-  * This template - build and publish python libraries and docker images
-* [quantready-api](https://github.com/closedloop-technologies/quantready-api) - A template to build and deploy fastapi applications
-  * authentication - api key or oauth
-  * authorization - RBAC via OSO
-  * rate limiting - via redis
-  * job-queues to support long-running tasks
-  * workers
-  * caching
-  * github actions to deploy to gcloud
-  * all other features of quantready-base
-* [quantready-vendor](https://github.com/closedloop-technologies/quantready-vendor) - A template to sell and meter access to your APIs. Supports time-based and usage-based pricing.
-  * supports free and paid endpoints
-  * billing per API call or per time-period
-  * stripe-cli integration for managing products and billing
-  * pricing-tables, account management and checkout
-  * usage tracking api
-  * all other features of quantready-api
-* [quantready-chat]
-  * A template to build and deploy chatbots
-  * Supports Websockets
-  * Slack Integration
-  * all other features of quantready-vendor
