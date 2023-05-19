@@ -112,11 +112,23 @@ quantready configure
 
 This will create a .quantready file in the root of the project.
 
-### GitHub Actions: On push to `main`
+### GitHub Actions: On creation of a new release
 
-Github actions are configured to run on push to main.
-It will read the config from .quantready file and
-publish the library to pypi or private repository as well as build the docker image and push it to docker hub or gcr.
+**Configuration**
+Set a GitHub Repository Secret `PYPI_API_TOKEN` equal to an API key generated from your PYPI account:
+1. Generate Token here: https://pypi.org/manage/account/token/
+2. Set it as a Repository Secret here: https://github.com/<username>/<repo>/settings/secrets/actions
+
+**Create a new Release**
+
+1. Goto https://github.com/closedloop-technologies/quantready/releases/new
+
+or
+
+1. Goto https://github.com/<username>/<repo>/releases
+2. Click "Draft a new Release"
+
+This will trigger the GitHub Action to deploy your new release to PyPi
 
 ### Push Docker image
 
