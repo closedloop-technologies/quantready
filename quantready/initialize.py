@@ -2,6 +2,7 @@ import json
 import os
 import re
 import subprocess
+import time
 from pathlib import Path
 
 import typer
@@ -88,10 +89,11 @@ def pull_template_into_new_repo(qr_info: QuantReadyInfo):
         ) from e
 
     qr_info.repo = output.decode("utf-8").strip()
-
+    print(f"Repository created: {qr_info.repo} - sleeping for 15 seconds")
+    time.sleep(15)
     try:
         output = subprocess.check_output(["gh", "repo", "clone", qr_info.repo])
-        print(f"Clone successful: {output.decode('utf-8').strip()}")
+        print(f"Clone successful {output.decode('utf-8').lstrip()}".strip())
     except subprocess.CalledProcessError as e:
         raise RuntimeError(
             "Error: Could not clone repository.  Please check github cli permissions are set."
