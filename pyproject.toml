@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "quantready"
-version = "0.1.0"
+version = "0.2.0"
 description = "A CLI to quickly launch data-driven and API-first businesses - using the modern python stack"
 authors = ["Sean Kruzel <sean@closedloop.tech>"]
 license = "MIT"
