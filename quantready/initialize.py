@@ -91,6 +91,7 @@ def pull_template_into_new_repo(qr_info: QuantReadyInfo):
 
     try:
         output = subprocess.check_output(["gh", "repo", "clone", qr_info.repo])
+        print(f"Clone successful: {output.decode('utf-8').strip()}")
     except subprocess.CalledProcessError as e:
         raise RuntimeError(
             "Error: Could not clone repository.  Please check github cli permissions are set."
