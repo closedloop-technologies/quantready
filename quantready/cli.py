@@ -44,7 +44,7 @@ def init(
     """Main Function"""
     print(f"{banner()}\n")
 
-    print("Initializing repository...")
+    print(f"Initializing repository from {template}")
     # If in git repo, check if clean
     try:
         initialize(name, template, description, repo, version, force)

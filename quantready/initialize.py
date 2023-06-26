@@ -85,7 +85,7 @@ def pull_template_into_new_repo(qr_info: QuantReadyInfo):
         )
     except subprocess.CalledProcessError as e:
         raise RuntimeError(
-            "Error: Could not create repository.  Please check that the name is not already taken."
+            f"Error: Could not create repository.  Please check that the name is not already taken: {e}"
         ) from e
 
     qr_info.repo = output.decode("utf-8").strip()
